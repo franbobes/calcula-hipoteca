@@ -45,6 +45,7 @@
   header {
     background: var(--navy);
     padding: 0 clamp(1rem, 4vw, 3rem);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
   }
 
   .header-inner {
@@ -53,24 +54,29 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 44px;
   }
 
   .logo {
     font-family: 'Fraunces', serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--cream);
     letter-spacing: -0.3px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
   .logo span { color: var(--gold-light); }
+  .logo-sep { width: 1px; height: 14px; background: rgba(255,255,255,0.15); }
+  .logo-sub { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; color: rgba(248,244,238,0.38); }
 
   nav { display: flex; gap: 1.5rem; }
   nav a {
-    font-size: 13px;
-    color: rgba(248,244,238,0.6);
+    font-size: 12px;
+    color: rgba(248,244,238,0.5);
     text-decoration: none;
     font-weight: 400;
     transition: color 0.2s;
@@ -109,25 +115,18 @@
   /* ── Hero ── */
   .hero {
     background: var(--navy);
-    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem) clamp(2.5rem, 6vw, 5rem);
-    position: relative;
-    overflow: hidden;
+    padding: 0.7rem clamp(1rem, 4vw, 3rem);
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(192,125,42,0.15) 0%, transparent 70%);
-    pointer-events: none;
-  }
+
 
   .hero-inner {
     max-width: 1100px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
   .hero-tag {
@@ -151,13 +150,10 @@
 
   .hero h1 {
     font-family: 'Fraunces', serif;
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--cream);
-    line-height: 1.15;
-    letter-spacing: -0.5px;
-    max-width: 560px;
-    margin-bottom: 1rem;
+    letter-spacing: -0.3px;
   }
 
   .hero h1 em {
@@ -167,9 +163,10 @@
   }
 
   .hero p {
-    color: rgba(248,244,238,0.55);
-    font-size: 15px;
-    max-width: 480px;
+    font-size: 12px;
+    color: rgba(248,244,238,0.38);
+    border-left: 1px solid rgba(255,255,255,0.12);
+    padding-left: 1.5rem;
   }
 
   /* ── Main layout ── */
@@ -321,7 +318,7 @@
 
   .result-main-value {
     font-family: 'Fraunces', serif;
-    font-size: clamp(2.8rem, 6vw, 4rem);
+    font-size: clamp(3.4rem, 7vw, 5.2rem);
     font-weight: 500;
     color: var(--cream);
     letter-spacing: -1px;
@@ -771,26 +768,37 @@
     </div>
 
     <div class="info-card">
-      <h3>Gastos adicionales</h3>
-      <p>Recuerda que al precio de la vivienda hay que sumar aproximadamente:</p>
-      <div style="margin-top:0.75rem; display:flex; flex-direction:column; gap:8px;">
-        <div style="display:flex; justify-content:space-between; font-size:13px; border-bottom:1px solid var(--border); padding-bottom:8px;">
-          <span style="color:var(--text-secondary)">ITP / IVA</span>
-          <span style="font-weight:500">6–10 %</span>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+        <h3 style="margin:0">Gastos adicionales</h3>
+        <select id="tipo-vivienda" onchange="calcGastos()" style="font-size:12px;border:1px solid var(--border);border-radius:6px;padding:4px 8px;background:white;color:var(--text-primary);cursor:pointer;outline:none;">
+          <option value="segunda">2ª mano</option>
+          <option value="nueva">Nueva obra</option>
+        </select>
+      </div>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:1rem;line-height:1.5;">Estimación según el precio introducido. Varía por comunidad autónoma.</p>
+      <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);background:var(--cream);">
+          <div><div style="font-size:13px;font-weight:500;" id="g-itp-label">ITP (7%)</div><div style="font-size:11px;color:var(--text-muted);">Transmisiones patrimoniales</div></div>
+          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;" id="g-itp">—</span>
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:13px; border-bottom:1px solid var(--border); padding-bottom:8px;">
-          <span style="color:var(--text-secondary)">Notaría y registro</span>
-          <span style="font-weight:500">~1.500 €</span>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);">
+          <div><div style="font-size:13px;font-weight:500;">Notaría y registro</div><div style="font-size:11px;color:var(--text-muted);">Escritura e inscripción</div></div>
+          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;" id="g-notaria">—</span>
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:13px; border-bottom:1px solid var(--border); padding-bottom:8px;">
-          <span style="color:var(--text-secondary)">Tasación</span>
-          <span style="font-weight:500">300–600 €</span>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);">
+          <div><div style="font-size:13px;font-weight:500;">Tasación</div><div style="font-size:11px;color:var(--text-muted);">Informe pericial</div></div>
+          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;" id="g-tasacion">—</span>
         </div>
-        <div style="display:flex; justify-content:space-between; font-size:13px;">
-          <span style="color:var(--text-secondary)">Total estimado</span>
-          <span style="font-weight:500; color:var(--gold)">~10–13 %</span>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);">
+          <div><div style="font-size:13px;font-weight:500;">Gestión</div><div style="font-size:11px;color:var(--text-muted);">Tramitación documentos</div></div>
+          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;" id="g-gestoria">—</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--navy);border-radius:0 0 9px 9px;">
+          <div><div style="font-size:13px;font-weight:500;color:var(--cream);">Total estimado</div><div id="g-pct-label" style="font-size:11px;color:rgba(248,244,238,0.4);">aprox. 10% del precio</div></div>
+          <span style="font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--gold-light);" id="g-total">—</span>
         </div>
       </div>
+      <p style="font-size:11px;color:var(--text-muted);margin-top:0.6rem;line-height:1.5;">* El banco asume AJD desde 2019. ITP varía entre 4–10% según CC.AA.</p>
     </div>
 
     <!-- Ad sidebar 300×250 bottom -->
@@ -882,6 +890,7 @@
 
     updateChart(capital, n, r, cuota);
     updateTable(capital, n, r, cuota);
+    if(typeof calcGastos !== "undefined") calcGastos();
   }
 
   // ── Number animation ──
@@ -1014,8 +1023,31 @@
     document.getElementById('view-tabla').style.display = tab === 'tabla' ? '' : 'none';
   }
 
+  function calcGastos() {
+    var precio = state.precio;
+    var el = document.getElementById('tipo-vivienda');
+    var tipo = el ? el.value : 'segunda';
+    var itpPct, itpLabel;
+    if (tipo === 'segunda') { itpPct = 0.07; itpLabel = 'ITP (7%)'; }
+    else { itpPct = 0.10; itpLabel = 'IVA 10% + AJD'; }
+    var itp = precio * itpPct;
+    var notaria = precio < 150000 ? 1100 : precio < 300000 ? 1500 : precio < 600000 ? 2200 : precio < 1200000 ? 3200 : 4500;
+    var tasacion = precio < 200000 ? 320 : precio < 500000 ? 450 : precio < 1000000 ? 620 : 950;
+    var gestoria = 380;
+    var total = itp + notaria + tasacion + gestoria;
+    var pct = ((total / precio) * 100).toFixed(1);
+    document.getElementById('g-itp-label').textContent = itpLabel;
+    document.getElementById('g-itp').textContent = fmtEur(Math.round(itp));
+    document.getElementById('g-notaria').textContent = fmtEur(notaria);
+    document.getElementById('g-tasacion').textContent = fmtEur(tasacion);
+    document.getElementById('g-gestoria').textContent = fmtEur(gestoria);
+    document.getElementById('g-total').textContent = fmtEur(Math.round(total));
+    document.getElementById('g-pct-label').textContent = 'aprox. ' + pct + '% del precio';
+  }
+
   // ── Init ──
   calculate();
+  calcGastos();
 </script>
 </body>
 </html>
