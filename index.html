@@ -777,6 +777,41 @@
         </div>
       </div>
 
+      <!-- Gastos adicionales -->
+      <div style="padding:1.75rem 2rem;border-bottom:1px solid var(--border);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <div class="section-title" style="margin:0;">Gastos de compra estimados</div>
+          <select id="tipo-vivienda" onchange="calcGastos()" style="font-size:12px;border:1px solid var(--border);border-radius:6px;padding:4px 10px;background:var(--cream);color:var(--text-primary);cursor:pointer;outline:none;">
+            <option value="segunda">2ª mano</option>
+            <option value="nueva">Nueva obra</option>
+          </select>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:0.75rem;">
+          <div style="background:var(--cream);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:5px;" id="g-itp-label">ITP (7%)</div>
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--text-primary);" id="g-itp">—</div>
+          </div>
+          <div style="background:var(--cream);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:5px;">Notaría</div>
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--text-primary);" id="g-notaria">—</div>
+          </div>
+          <div style="background:var(--cream);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:5px;">Tasación</div>
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--text-primary);" id="g-tasacion">—</div>
+          </div>
+          <div style="background:var(--navy);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:rgba(248,244,238,0.45);margin-bottom:5px;">Total gastos</div>
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--gold-light);" id="g-total">—</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <p style="font-size:11px;color:var(--text-muted);">* ITP varía entre 4–10% según CC.AA. El banco asume AJD desde 2019.</p>
+          <span style="font-size:12px;color:var(--text-muted);" id="g-pct-label"></span>
+        </div>
+        <!-- hidden gestoria element to keep JS working -->
+        <span id="g-gestoria" style="display:none;"></span>
+      </div>
+
       <!-- Chart -->
       <div class="chart-section">
         <div class="section-title">Evolución de la hipoteca</div>
@@ -890,41 +925,6 @@
         <li>Amortizar anticipadamente en los primeros años reduce los intereses totales drásticamente.</li>
       </ul>
     </div>
-
-    <div class="info-card">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-        <h3 style="margin:0">Gastos adicionales</h3>
-        <select id="tipo-vivienda" onchange="calcGastos()" style="font-size:12px;border:1px solid var(--border);border-radius:6px;padding:4px 8px;background:white;color:var(--text-primary);cursor:pointer;outline:none;">
-          <option value="segunda">2ª mano</option>
-          <option value="nueva">Nueva obra</option>
-        </select>
-      </div>
-      <p style="font-size:12px;color:var(--text-muted);margin-bottom:1rem;line-height:1.5;">Estimación según el precio introducido. Varía por comunidad autónoma.</p>
-      <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);background:var(--cream);">
-          <div><div style="font-size:13px;font-weight:500;" id="g-itp-label">ITP (7%)</div><div style="font-size:11px;color:var(--text-muted);">Transmisiones patrimoniales</div></div>
-          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;" id="g-itp">—</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);">
-          <div><div style="font-size:13px;font-weight:500;">Notaría y registro</div><div style="font-size:11px;color:var(--text-muted);">Escritura e inscripción</div></div>
-          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;" id="g-notaria">—</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);">
-          <div><div style="font-size:13px;font-weight:500;">Tasación</div><div style="font-size:11px;color:var(--text-muted);">Informe pericial</div></div>
-          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;" id="g-tasacion">—</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border-bottom:1px solid var(--border);">
-          <div><div style="font-size:13px;font-weight:500;">Gestión</div><div style="font-size:11px;color:var(--text-muted);">Tramitación documentos</div></div>
-          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;" id="g-gestoria">—</span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:var(--navy);border-radius:0 0 9px 9px;">
-          <div><div style="font-size:13px;font-weight:500;color:var(--cream);">Total estimado</div><div id="g-pct-label" style="font-size:11px;color:rgba(248,244,238,0.4);">aprox. 10% del precio</div></div>
-          <span style="font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--gold-light);" id="g-total">—</span>
-        </div>
-      </div>
-      <p style="font-size:11px;color:var(--text-muted);margin-top:0.6rem;line-height:1.5;">* El banco asume AJD desde 2019. ITP varía entre 4–10% según CC.AA.</p>
-    </div>
-
 
 
     <div class="info-card" style="border-color:var(--gold-pale); background:var(--gold-pale);">
