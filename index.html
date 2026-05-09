@@ -1,11 +1,86 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora de Hipoteca — Calcula tu cuota mensual</title>
-<meta name="description" content="Calcula la cuota mensual de tu hipoteca al instante. Introduce el precio de la vivienda, la entrada y el tipo de interés para obtener tu simulación completa.">
+
+<!-- Primary SEO -->
+<title>Calculadora de Hipoteca 2025 — Calcula tu Cuota Mensual Gratis</title>
+<meta name="description" content="Calcula la cuota mensual de tu hipoteca al instante en 2025. Simulador gratuito con cuadro de amortización completo, gastos incluidos y comparativa fijo vs variable. ¿Cuánto pagaré de hipoteca?">
+<meta name="keywords" content="calculadora hipoteca, cuota mensual hipoteca, simulador hipoteca, calcular hipoteca españa, hipoteca 2025, cuota hipoteca variable, amortización hipoteca">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="CalculaHipoteca">
+<link rel="canonical" href="https://calculahipoteca.es/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calculahipoteca.es/">
+<meta property="og:title" content="Calculadora de Hipoteca 2025 — Cuota mensual al instante">
+<meta property="og:description" content="Calcula tu cuota mensual, intereses totales y gastos de compra en segundos. Simulador gratuito para hipotecas en España.">
+<meta property="og:image" content="https://calculahipoteca.es/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="CalculaHipoteca">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculadora de Hipoteca 2025 — Gratis y sin registro">
+<meta name="twitter:description" content="Simula tu hipoteca al instante: cuota mensual, amortización y gastos de compra incluidos.">
+<meta name="twitter:image" content="https://calculahipoteca.es/og-image.jpg">
+
+<!-- Schema: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Hipoteca",
+  "url": "https://calculahipoteca.es",
+  "description": "Simulador gratuito de hipotecas para España. Calcula tu cuota mensual, amortización e intereses totales al instante.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "inLanguage": "es",
+  "creator": { "@type": "Organization", "name": "CalculaHipoteca", "url": "https://calculahipoteca.es" }
+}
+</script>
+
+<!-- Schema: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se calcula la cuota mensual de una hipoteca?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La cuota se calcula con la fórmula de amortización francesa: C = P x [r(1+r)^n] / [(1+r)^n - 1], donde P es el capital, r el interés mensual y n el número de cuotas. Esta calculadora lo hace automáticamente." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué porcentaje de mis ingresos debe ser la hipoteca?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los bancos recomiendan que la cuota mensual no supere el 30-35% de tus ingresos netos mensuales. Si ganas 2.500€ netos, tu cuota máxima recomendada es de 750-875€." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué gastos tiene una hipoteca además de la cuota?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Al precio de la vivienda hay que sumar el ITP (6-10% en segunda mano) o IVA+AJD (10% en obra nueva), notaria y registro (~1.500-3.000€), tasación (300-900€) y gestión (~380€). En total entre un 10 y 13% del precio." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Conviene amortizar hipoteca anticipadamente?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, amortizar en los primeros años reduce drásticamente los intereses totales ya que la mayor parte de la cuota inicial es interés. Puedes elegir reducir plazo (ahorras más) o reducir cuota (menos ahorro pero más liquidez mensual)." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre TIN y TAE en una hipoteca?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El TIN (Tipo de Interés Nominal) es el interés puro que pagas. La TAE (Tasa Anual Equivalente) incluye también comisiones y gastos, por lo que es la cifra real que debes comparar entre diferentes ofertas de hipoteca." }
+    }
+  ]
+}
+</script>
+
+<!-- Preconnect fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 
@@ -109,7 +184,7 @@
   }
   .ad-slot svg { opacity: 0.4; }
   .ad-top { width: 728px; max-width: 100%; height: 90px; }
-  .ad-sidebar { width: 100%; height: 250px; }
+  .ad-sidebar { width: 100%; height: 600px; }
   .ad-inline { width: 100%; height: 90px; }
 
   /* ── Hero ── */
@@ -175,12 +250,12 @@
     margin: 0 auto;
     padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 3rem);
     display: grid;
-    grid-template-columns: 1fr 320px;
+    grid-template-columns: 1fr 340px;
     gap: 2rem;
     align-items: start;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     .main-wrap { grid-template-columns: 1fr; }
     nav { display: none; }
   }
@@ -603,7 +678,7 @@
 <!-- Main -->
 <div class="main-wrap">
 
-  <!-- Left: Calculator -->
+  <!-- Calculator column -->
   <div>
     <div class="calc-card">
 
@@ -694,11 +769,11 @@
         </div>
       </div>
 
-      <!-- Ad inline -->
-      <div style="padding: 1rem 2rem; background: var(--cream-dark); border-bottom: 1px solid var(--border);">
-        <div class="ad-slot ad-inline">
+      <!-- Ad: leaderboard between results and chart (high attention) -->
+      <div style="padding:1rem 2rem;background:var(--cream-dark);border-bottom:1px solid var(--border);display:flex;justify-content:center;">
+        <div class="ad-slot" style="width:100%;max-width:728px;height:90px;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
-          Google AdSense — 728×90 (inline)
+          Google AdSense — 728×90 (zona de máxima atención)
         </div>
       </div>
 
@@ -737,7 +812,7 @@
     </div><!-- /calc-card -->
 
 
-    <!-- Ad leaderboard 1 -->
+    <!-- Ad: leaderboard debajo del gráfico (exit intent) -->
     <div style="margin-top:1.5rem;">
       <div class="ad-slot" style="width:100%;height:90px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
@@ -745,23 +820,65 @@
       </div>
     </div>
 
-    <!-- Ad leaderboard 2 -->
-    <div style="margin-top:1rem;">
-      <div class="ad-slot" style="width:100%;height:90px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
-        Google AdSense — 728×90
+    <!-- FAQ Block (SEO) -->
+    <div style="margin-top:1.5rem;background:white;border-radius:var(--radius);border:1px solid var(--border);padding:1.75rem 2rem;">
+      <h2 style="font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:var(--text-primary);margin-bottom:1.25rem;">Preguntas frecuentes sobre hipotecas</h2>
+      <div style="display:flex;flex-direction:column;gap:0;">
+
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0;" open>
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Qué porcentaje de mis ingresos debe ser la cuota?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">Los bancos recomiendan que la cuota no supere el <strong>30–35% de tus ingresos netos mensuales</strong>. Si ganas 2.500€ netos, tu cuota máxima recomendada es de 750–875€. Superar ese umbral puede dificultar la aprobación del préstamo.</p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0;">
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Conviene amortizar anticipadamente?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">Sí, especialmente en los primeros años. Puedes elegir <strong>reducir plazo</strong> (ahorras más en intereses) o <strong>reducir cuota</strong> (menos ahorro pero más liquidez mensual). La ley 5/2019 limita las comisiones de amortización anticipada en hipotecas variables a un máximo del 0,25% los 3 primeros años.</p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0;">
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Qué diferencia hay entre TIN y TAE?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">El <strong>TIN</strong> (Tipo de Interés Nominal) es el interés puro del préstamo. La <strong>TAE</strong> (Tasa Anual Equivalente) incluye además comisiones y gastos asociados. Siempre compara la TAE entre diferentes hipotecas, no el TIN, para saber cuál es realmente más barata.</p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0;">
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Hipoteca fija o variable en 2025?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">Con el Euríbor bajando desde máximos de 2023, las hipotecas <strong>variables están volviendo a ser competitivas</strong>. La fija ofrece seguridad ante futuras subidas. Si tienes perfil conservador o plazo largo (+20 años), la fija suele ser más recomendable. Si prevees que los tipos seguirán bajando, la variable puede salir más barata.</p>
+        </details>
+
+        <details style="padding:1rem 0;">
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Cuánto dinero necesito ahorrado para comprar una casa?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">Los bancos financian como máximo el <strong>80% del valor de tasación</strong>, por lo que necesitas al menos un 20% de entrada. A eso hay que sumar los gastos de compra (10–13% del precio). En total, para una vivienda de 300.000€ necesitas tener ahorrados aproximadamente <strong>90.000–99.000€</strong>.</p>
+        </details>
+
       </div>
     </div>
 
-  </div><!-- /left -->
+  </div><!-- /center -->
 
   <!-- Right: Sidebar -->
   <div class="sidebar">
 
-    <!-- Ad sidebar 300×250 -->
-    <div class="ad-slot ad-sidebar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      Google AdSense<br>300×250
+    <!-- Ad sidebar 300x600 sticky (mejor RPM) -->
+    <div style="position:sticky;top:1rem;">
+      <div class="ad-slot" style="width:100%;height:600px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Google AdSense<br>300×600<br><span style="font-size:10px;opacity:0.6;">Half Page — mayor RPM</span>
+      </div>
     </div>
 
     <div class="info-card">
@@ -808,11 +925,7 @@
       <p style="font-size:11px;color:var(--text-muted);margin-top:0.6rem;line-height:1.5;">* El banco asume AJD desde 2019. ITP varía entre 4–10% según CC.AA.</p>
     </div>
 
-    <!-- Ad sidebar 300×250 bottom -->
-    <div class="ad-slot ad-sidebar">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      Google AdSense<br>300×250
-    </div>
+
 
     <div class="info-card" style="border-color:var(--gold-pale); background:var(--gold-pale);">
       <h3 style="color:var(--gold);">¿Tienes dudas?</h3>
