@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Calculadora de Hipoteca 2025 — Calcula tu Cuota Mensual Gratis</title>
+<meta name="description" content="Calcula la cuota mensual de tu hipoteca al instante en 2025. Simulador gratuito con cuadro de amortización completo, gastos incluidos y comparativa fijo vs variable. ¿Cuánto pagaré de hipoteca?">
+<meta name="keywords" content="calculadora hipoteca, cuota mensual hipoteca, simulador hipoteca, calcular hipoteca españa, hipoteca 2025, cuota hipoteca variable, amortización hipoteca">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="CalculaHipoteca">
+<link rel="canonical" href="https://simuladorahipoteca.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://simuladorahipoteca.com/">
+<meta property="og:title" content="Calculadora de Hipoteca 2025 — Cuota mensual al instante">
+<meta property="og:description" content="Calcula tu cuota mensual, intereses totales y gastos de compra en segundos. Simulador gratuito para hipotecas en España.">
+<meta property="og:image" content="https://simuladorahipoteca.com/og-image.jpg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="CalculaHipoteca">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculadora de Hipoteca 2025 — Gratis y sin registro">
+<meta name="twitter:description" content="Simula tu hipoteca al instante: cuota mensual, amortización y gastos de compra incluidos.">
+<meta name="twitter:image" content="https://simuladorahipoteca.com/og-image.jpg">
+
+<!-- Schema: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Hipoteca",
+  "url": "https://simuladorahipoteca.com",
+  "description": "Simulador gratuito de hipotecas para España. Calcula tu cuota mensual, amortización e intereses totales al instante.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "inLanguage": "es",
+  "creator": { "@type": "Organization", "name": "CalculaHipoteca", "url": "https://simuladorahipoteca.com" }
+}
+</script>
+
+<!-- Schema: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo se calcula la cuota mensual de una hipoteca?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La cuota se calcula con la fórmula de amortización francesa: C = P x [r(1+r)^n] / [(1+r)^n - 1], donde P es el capital, r el interés mensual y n el número de cuotas. Esta calculadora lo hace automáticamente." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué porcentaje de mis ingresos debe ser la hipoteca?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los bancos recomiendan que la cuota mensual no supere el 30-35% de tus ingresos netos mensuales. Si ganas 2.500€ netos, tu cuota máxima recomendada es de 750-875€." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué gastos tiene una hipoteca además de la cuota?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Al precio de la vivienda hay que sumar el ITP (6-10% en segunda mano) o IVA+AJD (10% en obra nueva), notaria y registro (~1.500-3.000€), tasación (300-900€) y gestión (~380€). En total entre un 10 y 13% del precio." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Conviene amortizar hipoteca anticipadamente?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, amortizar en los primeros años reduce drásticamente los intereses totales ya que la mayor parte de la cuota inicial es interés. Puedes elegir reducir plazo (ahorras más) o reducir cuota (menos ahorro pero más liquidez mensual)." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre TIN y TAE en una hipoteca?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El TIN (Tipo de Interés Nominal) es el interés puro que pagas. La TAE (Tasa Anual Equivalente) incluye también comisiones y gastos, por lo que es la cifra real que debes comparar entre diferentes ofertas de hipoteca." }
+    }
+  ]
+}
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9088166144099375"
+     crossorigin="anonymous"></script>
+
+<!-- Preconnect fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F8F4EE;
+    --cream-dark: #EFE9DF;
+    --navy: #0E1B2E;
+    --navy-mid: #1A2F4A;
+    --navy-light: #2A4566;
+    --gold: #C07D2A;
+    --gold-light: #E09848;
+    --gold-pale: #F5E6CC;
+    --text-primary: #0E1B2E;
+    --text-secondary: #4A6070;
+    --text-muted: #8A9BAA;
+    --border: rgba(14,27,46,0.12);
+    --border-strong: rgba(14,27,46,0.22);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-primary);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--navy);
+    padding: 0 clamp(1rem, 4vw, 3rem);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+  }
+
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--cream);
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo span { color: var(--gold-light); }
+  .logo-sep { width: 1px; height: 14px; background: rgba(255,255,255,0.15); }
+  .logo-sub { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; color: rgba(248,244,238,0.38); }
+
+  nav { display: flex; gap: 1.5rem; }
+  nav a {
+    font-size: 12px;
+    color: rgba(248,244,238,0.5);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--cream); }
+
+  /* ── Ad banner top ── */
+  .ad-banner {
+    background: var(--cream-dark);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  }
+  .ad-slot {
+    background: white;
+    border: 1.5px dashed var(--border-strong);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    gap: 4px;
+  }
+  .ad-slot svg { opacity: 0.4; }
+  .ad-top { width: 728px; max-width: 100%; height: 90px; }
+  .ad-sidebar { width: 100%; height: 600px; }
+  .ad-inline { width: 100%; height: 90px; }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--navy);
+    padding: 0.7rem clamp(1rem, 4vw, 3rem);
+  }
+
+
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 16px; height: 1px;
+    background: var(--gold-light);
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--cream);
+    letter-spacing: -0.3px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 300;
+  }
+
+  .hero p {
+    font-size: 12px;
+    color: rgba(248,244,238,0.38);
+    border-left: 1px solid rgba(255,255,255,0.12);
+    padding-left: 1.5rem;
+  }
+
+  /* ── Main layout ── */
+  .main-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .main-wrap { grid-template-columns: 1fr; }
+    nav { display: none; }
+  }
+
+  /* ── Calculator card ── */
+  .calc-card {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .calc-section {
+    padding: 1.75rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .calc-section:last-child { border-bottom: none; }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Inputs ── */
+  .input-group { margin-bottom: 1.5rem; }
+  .input-group:last-child { margin-bottom: 0; }
+
+  .input-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+
+  .input-label span:first-child {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+  }
+
+  .input-value {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+    background: none;
+    border: none;
+    outline: none;
+    text-align: right;
+    width: 160px;
+    cursor: text;
+  }
+
+  .input-value:focus {
+    background: var(--gold-pale);
+    border-radius: 4px;
+    padding: 2px 6px;
+  }
+
+  /* Slider */
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: var(--cream-dark);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2.5px solid var(--navy);
+    border-radius: 50%;
+    cursor: grab;
+    box-shadow: 0 2px 8px rgba(14,27,46,0.2);
+    transition: transform 0.15s, border-color 0.15s;
+  }
+
+  input[type=range]::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.2);
+    border-color: var(--gold);
+  }
+
+  input[type=range]::-moz-range-thumb {
+    width: 20px; height: 20px;
+    background: white;
+    border: 2.5px solid var(--navy);
+    border-radius: 50%;
+    cursor: grab;
+  }
+
+  .slider-bounds {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+  }
+
+  /* ── Results panel ── */
+  .results-section {
+    background: var(--navy);
+    padding: 1.75rem 2rem;
+  }
+
+  .result-main {
+    text-align: center;
+    padding: 1.5rem 0 1.75rem;
+    border-bottom: 1px solid rgba(248,244,238,0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  .result-main-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: rgba(248,244,238,0.45);
+    margin-bottom: 0.5rem;
+  }
+
+  .result-main-value {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3.4rem, 7vw, 5.2rem);
+    font-weight: 500;
+    color: var(--cream);
+    letter-spacing: -1px;
+    line-height: 1;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .result-main-sub {
+    font-size: 13px;
+    color: rgba(248,244,238,0.4);
+    margin-top: 6px;
+  }
+
+  .result-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stat-item { }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(248,244,238,0.4);
+    margin-bottom: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  .stat-value {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--cream);
+    letter-spacing: -0.3px;
+  }
+
+  .stat-value.highlight { color: var(--gold-light); }
+
+  /* ── Desglose visual ── */
+  .breakdown-bar {
+    height: 8px;
+    background: rgba(248,244,238,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 1.5rem 0 0.75rem;
+  }
+
+  .breakdown-fill {
+    height: 100%;
+    background: var(--gold-light);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+
+  .breakdown-legend {
+    display: flex;
+    gap: 1rem;
+    font-size: 12px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(248,244,238,0.5);
+  }
+
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+
+  /* ── Chart ── */
+  .chart-section { padding: 1.75rem 2rem; }
+
+  .chart-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 1.25rem;
+    background: var(--cream-dark);
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    width: fit-content;
+  }
+
+  .tab-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border: none;
+    border-radius: 6px;
+    background: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active {
+    background: white;
+    color: var(--text-primary);
+    box-shadow: 0 1px 4px rgba(14,27,46,0.1);
+  }
+
+  /* ── Sidebar ── */
+  .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  /* ── Info cards ── */
+  .info-card {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .info-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .info-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .tip-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .tip-list li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .tip-list li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── Amortization table ── */
+  .amort-wrap {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+  }
+
+  .amort-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .amort-table th {
+    background: var(--cream-dark);
+    padding: 10px 14px;
+    text-align: right;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .amort-table th:first-child { text-align: left; }
+
+  .amort-table td {
+    padding: 9px 14px;
+    text-align: right;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-feature-settings: "tnum";
+  }
+
+  .amort-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .amort-table tr:last-child td { border-bottom: none; }
+  .amort-table tr:hover td { background: var(--cream); }
+
+  .amort-table .interest-col { color: var(--gold); }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--navy);
+    color: rgba(248,244,238,0.4);
+    text-align: center;
+    font-size: 12px;
+    padding: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  footer a { color: rgba(248,244,238,0.6); }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .calc-card { animation: fadeUp 0.4s ease both; }
+  .sidebar { animation: fadeUp 0.4s ease 0.1s both; }
+
+  .number-anim { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+  /* Euribor badge */
+  .rate-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--gold-pale);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .rate-badge::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: inline-block;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/">Calcula<span>Hipoteca</span></a>
+    <nav>
+      <a href="/">Calculadora</a>
+      <a href="/aviso-legal.html">Aviso legal</a>
+      <a href="/privacidad.html">Privacidad</a>
+      <a href="/blog-hipoteca-fija-vs-variable.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Ad banner top (728×90) -->
+<div class="ad-banner">
+  <div class="ad-slot ad-top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6v12M2 12h20"/></svg>
+    Google AdSense — 728×90
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Simulador gratuito</div>
+    <h1>Calcula tu hipoteca<br><em>en segundos</em></h1>
+    <p>Obtén tu cuota mensual, el total de intereses y el cuadro de amortización completo al instante.</p>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main-wrap">
+
+  <!-- Calculator column -->
+  <div>
+    <div class="calc-card">
+
+      <!-- Inputs -->
+      <div class="calc-section">
+        <div class="section-title">Datos de la hipoteca</div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Precio de la vivienda</span>
+            <input class="input-value" id="val-precio" value="300.000 €" onchange="syncFromInput('precio', this.value)">
+          </div>
+          <input type="range" id="sl-precio" min="50000" max="2500000" step="5000" value="300000" oninput="syncSlider('precio', this.value)">
+          <div class="slider-bounds"><span>50.000 €</span><span>2.500.000 €</span></div>
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Entrada inicial</span>
+            <input class="input-value" id="val-entrada" value="60.000 €" onchange="syncFromInput('entrada', this.value)">
+          </div>
+          <input type="range" id="sl-entrada" min="5000" max="1250000" step="5000" value="60000" oninput="syncSlider('entrada', this.value)">
+          <div class="slider-bounds"><span>5.000 €</span><span>1.250.000 €</span></div>
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Plazo</span>
+            <input class="input-value" id="val-plazo" value="30 años" onchange="syncFromInput('plazo', this.value)">
+          </div>
+          <input type="range" id="sl-plazo" min="5" max="40" step="1" value="30" oninput="syncSlider('plazo', this.value)">
+          <div class="slider-bounds"><span>5 años</span><span>40 años</span></div>
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Tipo de interés (TIN)
+              <span class="rate-badge">Euríbor + diferencial</span>
+            </span>
+            <input class="input-value" id="val-interes" value="3,50 %" onchange="syncFromInput('interes', this.value)">
+          </div>
+          <input type="range" id="sl-interes" min="0.5" max="10" step="0.05" value="3.5" oninput="syncSlider('interes', this.value)">
+          <div class="slider-bounds"><span>0,50 %</span><span>10,00 %</span></div>
+        </div>
+      </div>
+
+      <!-- Results panel (dark) -->
+      <div class="results-section">
+        <div class="section-title" style="color:rgba(248,244,238,0.35)">Resultado</div>
+
+        <div class="result-main">
+          <div class="result-main-label">Cuota mensual estimada</div>
+          <div class="result-main-value" id="res-cuota">—</div>
+          <div class="result-main-sub">durante <span id="res-meses">—</span> meses</div>
+        </div>
+
+        <div class="result-stats">
+          <div class="stat-item">
+            <div class="stat-label">Capital prestado</div>
+            <div class="stat-value" id="res-capital">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Total pagado</div>
+            <div class="stat-value" id="res-total">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Total intereses</div>
+            <div class="stat-value highlight" id="res-intereses">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Coste real (TAE est.)</div>
+            <div class="stat-value" id="res-tae">—</div>
+          </div>
+        </div>
+
+        <div class="breakdown-bar">
+          <div class="breakdown-fill" id="res-bar" style="width:0%"></div>
+        </div>
+        <div class="breakdown-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--gold-light)"></div>
+            <span>Capital</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:rgba(248,244,238,0.15)"></div>
+            <span>Intereses</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad: leaderboard between results and chart (high attention) -->
+      <div style="padding:1rem 2rem;background:var(--cream-dark);border-bottom:1px solid var(--border);display:flex;justify-content:center;">
+        <div class="ad-slot" style="width:100%;max-width:728px;height:90px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
+          Google AdSense — 728×90 (zona de máxima atención)
+        </div>
+      </div>
+
+      <!-- Gastos adicionales -->
+      <div style="padding:1.75rem 2rem;border-bottom:1px solid var(--border);">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+          <div class="section-title" style="margin:0;">Gastos de compra estimados</div>
+          <select id="tipo-vivienda" onchange="calcGastos()" style="font-size:12px;border:1px solid var(--border);border-radius:6px;padding:4px 10px;background:var(--cream);color:var(--text-primary);cursor:pointer;outline:none;">
+            <option value="segunda">2ª mano</option>
+            <option value="nueva">Nueva obra</option>
+          </select>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:0.75rem;">
+          <div style="background:var(--cream);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:5px;" id="g-itp-label">ITP (7%)</div>
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--text-primary);" id="g-itp">—</div>
+          </div>
+          <div style="background:var(--cream);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:5px;">Notaría</div>
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--text-primary);" id="g-notaria">—</div>
+          </div>
+          <div style="background:var(--cream);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);margin-bottom:5px;">Tasación</div>
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--text-primary);" id="g-tasacion">—</div>
+          </div>
+          <div style="background:var(--navy);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.6px;color:rgba(248,244,238,0.45);margin-bottom:5px;">Total gastos</div>
+            <div style="font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--gold-light);" id="g-total">—</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <p style="font-size:11px;color:var(--text-muted);">* ITP varía entre 4–10% según CC.AA. El banco asume AJD desde 2019.</p>
+          <span style="font-size:12px;color:var(--text-muted);" id="g-pct-label"></span>
+        </div>
+        <!-- hidden gestoria element to keep JS working -->
+        <span id="g-gestoria" style="display:none;"></span>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-section">
+        <div class="section-title">Evolución de la hipoteca</div>
+        <div class="chart-tabs">
+          <button class="tab-btn active" onclick="switchTab('grafico', this)">Gráfico</button>
+          <button class="tab-btn" onclick="switchTab('tabla', this)">Tabla anual</button>
+        </div>
+
+        <div id="view-grafico">
+          <div style="position:relative; width:100%; height:280px;">
+            <canvas id="myChart" role="img" aria-label="Gráfico de evolución del capital pendiente y los intereses pagados año a año"></canvas>
+          </div>
+        </div>
+
+        <div id="view-tabla" style="display:none">
+          <div class="amort-wrap">
+            <table class="amort-table" id="amort-table">
+              <thead>
+                <tr>
+                  <th>Año</th>
+                  <th>Cuota anual</th>
+                  <th>Capital amort.</th>
+                  <th class="interest-col">Intereses</th>
+                  <th>Capital pdte.</th>
+                </tr>
+              </thead>
+              <tbody id="amort-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /calc-card -->
+
+
+    <!-- Ad: leaderboard debajo del gráfico (exit intent) -->
+    <div style="margin-top:1.5rem;">
+      <div class="ad-slot" style="width:100%;height:90px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
+        Google AdSense — 728×90
+      </div>
+    </div>
+
+    <!-- FAQ Block (SEO) -->
+    <div style="margin-top:1.5rem;background:white;border-radius:var(--radius);border:1px solid var(--border);padding:1.75rem 2rem;">
+      <h2 style="font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:var(--text-primary);margin-bottom:1.25rem;">Preguntas frecuentes sobre hipotecas</h2>
+      <div style="display:flex;flex-direction:column;gap:0;">
+
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0;" open>
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Qué porcentaje de mis ingresos debe ser la cuota?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">Los bancos recomiendan que la cuota no supere el <strong>30–35% de tus ingresos netos mensuales</strong>. Si ganas 2.500€ netos, tu cuota máxima recomendada es de 750–875€. Superar ese umbral puede dificultar la aprobación del préstamo.</p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0;">
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Conviene amortizar anticipadamente?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">Sí, especialmente en los primeros años. Puedes elegir <strong>reducir plazo</strong> (ahorras más en intereses) o <strong>reducir cuota</strong> (menos ahorro pero más liquidez mensual). La ley 5/2019 limita las comisiones de amortización anticipada en hipotecas variables a un máximo del 0,25% los 3 primeros años.</p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0;">
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Qué diferencia hay entre TIN y TAE?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">El <strong>TIN</strong> (Tipo de Interés Nominal) es el interés puro del préstamo. La <strong>TAE</strong> (Tasa Anual Equivalente) incluye además comisiones y gastos asociados. Siempre compara la TAE entre diferentes hipotecas, no el TIN, para saber cuál es realmente más barata.</p>
+        </details>
+
+        <details style="border-bottom:1px solid var(--border);padding:1rem 0;">
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Hipoteca fija o variable en 2025?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">Con el Euríbor bajando desde máximos de 2023, las hipotecas <strong>variables están volviendo a ser competitivas</strong>. La fija ofrece seguridad ante futuras subidas. Si tienes perfil conservador o plazo largo (+20 años), la fija suele ser más recomendable. Si prevees que los tipos seguirán bajando, la variable puede salir más barata.</p>
+        </details>
+
+        <details style="padding:1rem 0;">
+          <summary style="font-size:14px;font-weight:500;color:var(--text-primary);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            ¿Cuánto dinero necesito ahorrado para comprar una casa?
+            <span style="font-size:18px;color:var(--text-muted);font-weight:300;">+</span>
+          </summary>
+          <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-top:0.75rem;">Los bancos financian como máximo el <strong>80% del valor de tasación</strong>, por lo que necesitas al menos un 20% de entrada. A eso hay que sumar los gastos de compra (10–13% del precio). En total, para una vivienda de 300.000€ necesitas tener ahorrados aproximadamente <strong>90.000–99.000€</strong>.</p>
+        </details>
+
+      </div>
+    </div>
+
+  </div><!-- /center -->
+
+  <!-- Right: Sidebar -->
+  <div class="sidebar">
+
+    <!-- Ad sidebar 300x600 sticky (mejor RPM) -->
+    <div style="position:sticky;top:1rem;">
+      <div class="ad-slot" style="width:100%;height:600px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        Google AdSense<br>300×600<br><span style="font-size:10px;opacity:0.6;">Half Page — mayor RPM</span>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <h3>Consejos para tu hipoteca</h3>
+      <ul class="tip-list">
+        <li>Busca un diferencial sobre Euríbor lo más bajo posible — cada 0,1 % importa a largo plazo.</li>
+        <li>La entrada mínima recomendada es el 20 % del valor de tasación para evitar seguros adicionales.</li>
+        <li>Compara la TAE, no solo el TIN — incluye comisiones y productos vinculados.</li>
+        <li>Amortizar anticipadamente en los primeros años reduce los intereses totales drásticamente.</li>
+      </ul>
+    </div>
+
+
+    <div class="info-card" style="border-color:var(--gold-pale); background:var(--gold-pale);">
+      <h3 style="color:var(--gold);">¿Tienes dudas?</h3>
+      <p style="font-size:13px; color:var(--text-secondary);">Consulta con un broker hipotecario independiente. Suelen comparar decenas de bancos sin coste para el cliente.</p>
+      <a href="/blog-hipoteca-fija-vs-variable.html" style="display:inline-block; margin-top:0.75rem; font-size:13px; font-weight:500; color:var(--gold); text-decoration:none; border-bottom:1px solid var(--gold);">Ver guía de hipotecas →</a>
+    </div>
+
+  </div><!-- /sidebar -->
+
+</div><!-- /main-wrap -->
+
+<footer>
+  <p>© 2025 SimuladoraHipoteca.com · Este simulador tiene fines orientativos. Los resultados no constituyen asesoramiento financiero.<br>
+  <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Política de privacidad</a> · <a href="/blog-hipoteca-fija-vs-variable.html">Blog hipotecas</a></p>
+</footer>
+
+<script>
+  // ── State ──
+  const state = { precio: 300000, entrada: 60000, plazo: 30, interes: 3.5 };
+  let chart = null;
+  let activeTab = 'grafico';
+
+  // ── Formatters ──
+  const fmtEur = v => v.toLocaleString('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' €';
+  const fmtPct = v => v.toFixed(2).replace('.', ',') + ' %';
+  const fmtYears = v => v + ' años';
+
+  function displayVal(key, v) {
+    if (key === 'precio' || key === 'entrada') return fmtEur(v);
+    if (key === 'plazo') return fmtYears(v);
+    if (key === 'interes') return fmtPct(v);
+  }
+
+  function parseVal(key, str) {
+    const n = parseFloat(str.replace(/[^\d,.-]/g, '').replace(',', '.'));
+    return isNaN(n) ? state[key] : n;
+  }
+
+  function syncSlider(key, val) {
+    state[key] = parseFloat(val);
+    document.getElementById('val-' + key).value = displayVal(key, state[key]);
+    calculate();
+  }
+
+  function syncFromInput(key, val) {
+    const parsed = parseVal(key, val);
+    state[key] = parsed;
+    const sl = document.getElementById('sl-' + key);
+    sl.value = parsed;
+    document.getElementById('val-' + key).value = displayVal(key, parsed);
+    calculate();
+  }
+
+  // ── Core calculation ──
+  function calculate() {
+    const capital = state.precio - state.entrada;
+    const n = state.plazo * 12;
+    const r = (state.interes / 100) / 12;
+
+    let cuota;
+    if (r === 0) {
+      cuota = capital / n;
+    } else {
+      cuota = capital * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    }
+
+    const totalPagado = cuota * n;
+    const totalIntereses = totalPagado - capital;
+    const pctCapital = Math.round((capital / totalPagado) * 100);
+
+    // TAE estimate (simplified)
+    const tae = state.interes + 0.15;
+
+    // Update DOM
+    animateNumber('res-cuota', cuota, v => fmtEur(Math.round(v)));
+    document.getElementById('res-meses').textContent = n;
+    document.getElementById('res-capital').textContent = fmtEur(Math.round(capital));
+    document.getElementById('res-total').textContent = fmtEur(Math.round(totalPagado));
+    document.getElementById('res-intereses').textContent = fmtEur(Math.round(totalIntereses));
+    document.getElementById('res-tae').textContent = fmtPct(tae);
+    document.getElementById('res-bar').style.width = pctCapital + '%';
+
+    updateChart(capital, n, r, cuota);
+    updateTable(capital, n, r, cuota);
+    if(typeof calcGastos !== "undefined") calcGastos();
+  }
+
+  // ── Number animation ──
+  function animateNumber(id, target, fmt) {
+    const el = document.getElementById(id);
+    const start = parseFloat(el.dataset.val || 0);
+    el.dataset.val = target;
+    const dur = 350;
+    const t0 = performance.now();
+    function step(now) {
+      const p = Math.min((now - t0) / dur, 1);
+      const ease = p < 0.5 ? 2*p*p : -1+(4-2*p)*p;
+      el.textContent = fmt(start + (target - start) * ease);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ── Amortization schedule ──
+  function buildSchedule(capital, n, r, cuota) {
+    let rows = [];
+    let saldo = capital;
+    for (let yr = 1; yr <= state.plazo; yr++) {
+      let cuotaAnual = 0, capitalAnual = 0, interesesAnual = 0;
+      for (let m = 0; m < 12 && saldo > 0; m++) {
+        const intMes = saldo * r;
+        const capMes = Math.min(cuota - intMes, saldo);
+        interesesAnual += intMes;
+        capitalAnual += capMes;
+        cuotaAnual += cuota;
+        saldo -= capMes;
+      }
+      rows.push({ yr, cuotaAnual, capitalAnual, interesesAnual, saldo: Math.max(saldo, 0) });
+    }
+    return rows;
+  }
+
+  function updateChart(capital, n, r, cuota) {
+    const schedule = buildSchedule(capital, n, r, cuota);
+    const labels = schedule.map(d => 'Año ' + d.yr);
+    const saldos = schedule.map(d => Math.round(d.saldo));
+    const intAcum = [];
+    let acc = 0;
+    schedule.forEach(d => { acc += d.interesesAnual; intAcum.push(Math.round(acc)); });
+
+    if (chart) {
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = saldos;
+      chart.data.datasets[1].data = intAcum;
+      chart.update();
+      return;
+    }
+
+    chart = new Chart(document.getElementById('myChart'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'Capital pendiente (€)',
+            data: saldos,
+            backgroundColor: '#1A2F4A',
+            borderRadius: 3,
+            borderSkipped: false,
+            yAxisID: 'y'
+          },
+          {
+            label: 'Intereses acumulados (€)',
+            data: intAcum,
+            type: 'line',
+            borderColor: '#C07D2A',
+            backgroundColor: 'rgba(192,125,42,0.08)',
+            borderWidth: 2,
+            tension: 0.35,
+            fill: true,
+            pointRadius: 0,
+            yAxisID: 'y'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => ' ' + ctx.dataset.label + ': ' + ctx.raw.toLocaleString('es-ES') + ' €'
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { font: { family: 'DM Sans', size: 11 }, color: '#8A9BAA',
+              callback: (v, i) => (i % Math.ceil(state.plazo / 10) === 0) ? 'Año ' + (i+1) : ''
+            }
+          },
+          y: {
+            grid: { color: 'rgba(14,27,46,0.07)' },
+            ticks: {
+              font: { family: 'DM Sans', size: 11 },
+              color: '#8A9BAA',
+              callback: v => (v / 1000) + 'K €'
+            }
+          }
+        }
+      }
+    });
+  }
+
+  function updateTable(capital, n, r, cuota) {
+    const rows = buildSchedule(capital, n, r, cuota);
+    const tbody = document.getElementById('amort-body');
+    tbody.innerHTML = rows.map(d => `
+      <tr>
+        <td>Año ${d.yr}</td>
+        <td>${fmtEur(Math.round(d.cuotaAnual))}</td>
+        <td>${fmtEur(Math.round(d.capitalAnual))}</td>
+        <td class="interest-col">${fmtEur(Math.round(d.interesesAnual))}</td>
+        <td>${fmtEur(Math.round(d.saldo))}</td>
+      </tr>
+    `).join('');
+  }
+
+  function switchTab(tab, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('view-grafico').style.display = tab === 'grafico' ? '' : 'none';
+    document.getElementById('view-tabla').style.display = tab === 'tabla' ? '' : 'none';
+  }
+
+  function calcGastos() {
+    var precio = state.precio;
+    var el = document.getElementById('tipo-vivienda');
+    var tipo = el ? el.value : 'segunda';
+    var itpPct, itpLabel;
+    if (tipo === 'segunda') { itpPct = 0.07; itpLabel = 'ITP (7%)'; }
+    else { itpPct = 0.10; itpLabel = 'IVA 10% + AJD'; }
+    var itp = precio * itpPct;
+    var notaria = precio < 150000 ? 1100 : precio < 300000 ? 1500 : precio < 600000 ? 2200 : precio < 1200000 ? 3200 : 4500;
+    var tasacion = precio < 200000 ? 320 : precio < 500000 ? 450 : precio < 1000000 ? 620 : 950;
+    var gestoria = 380;
+    var total = itp + notaria + tasacion + gestoria;
+    var pct = ((total / precio) * 100).toFixed(1);
+    document.getElementById('g-itp-label').textContent = itpLabel;
+    document.getElementById('g-itp').textContent = fmtEur(Math.round(itp));
+    document.getElementById('g-notaria').textContent = fmtEur(notaria);
+    document.getElementById('g-tasacion').textContent = fmtEur(tasacion);
+    document.getElementById('g-gestoria').textContent = fmtEur(gestoria);
+    document.getElementById('g-total').textContent = fmtEur(Math.round(total));
+    document.getElementById('g-pct-label').textContent = 'aprox. ' + pct + '% del precio';
+  }
+
+  // ── Init ──
+  calculate();
+  calcGastos();
+</script>
+</body>
+</html>
